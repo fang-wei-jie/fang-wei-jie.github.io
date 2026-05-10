@@ -7,6 +7,6 @@ import ExperienceCard from './ExperienceCard.astro';
   <h2 class="text-3xl font-bold">Experiences</h2>
 
   <div class="grid gap-5 py-10">
-    {experiences.map((experience) => <ExperienceCard experience={experience} />)}
+    {experiences.map((experience, index) => <ExperienceCard experience={experience} logoLoading={index === 0 ? 'eager' : 'lazy'} />)}
   </div>
 </section>

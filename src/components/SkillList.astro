@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import type { Skill } from '../data/portfolio';
 
 interface Props {
@@ -11,7 +12,13 @@ const { skills } = Astro.props;
 {
   skills.map((skill) => (
     <div class="flex items-center gap-3 p-2">
-      <img class="h-8 object-contain" src={skill.link} alt={skill.name} />
+      {
+        typeof skill.link === 'string' ? (
+          <Image class="h-8 w-8 shrink-0 object-contain" src={skill.link} alt={skill.name} width={32} height={32} loading="lazy" />
+        ) : (
+          <Image class="h-8 w-8 shrink-0 object-contain" src={skill.link} alt={skill.name} loading="lazy" />
+        )
+      }
       <p class="text-lg">{skill.name}</p>
     </div>
   ))

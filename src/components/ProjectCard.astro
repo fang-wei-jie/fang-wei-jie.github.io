@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import type { Project } from '../data/portfolio';
 
 interface Props {
@@ -33,7 +34,15 @@ const { project } = Astro.props;
       {
         project.techStacks.length > 0 && (
           <div class="flex flex-wrap gap-2">
-            {project.techStacks.map((stack) => <img class="h-8 object-contain" src={stack.link} alt={stack.name} />)}
+            {
+              project.techStacks.map((stack) =>
+                typeof stack.link === 'string' ? (
+                  <Image class="h-8 w-8 shrink-0 object-contain" src={stack.link} alt={stack.name} width={32} height={32} loading="lazy" />
+                ) : (
+                  <Image class="h-8 w-8 shrink-0 object-contain" src={stack.link} alt={stack.name} loading="lazy" />
+                )
+              )
+            }
           </div>
         )
       }

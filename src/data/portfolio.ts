@@ -1,5 +1,25 @@
+import angularLogo from '../assets/frameworks/angular.svg';
+import bukkuLogo from '../assets/company_logo/Bukku.png';
+import conditionZebraLogo from '../assets/company_logo/ConditionZebra.png';
+import ifastLogo from '../assets/company_logo/iFAST.jpeg';
+import angularJsLogo from '../assets/skills/angularJS.png';
+import bootstrap3Logo from '../assets/skills/bootstrap-3.png';
+import javaLogo from '../assets/skills/java.png';
+import jsLogo from '../assets/skills/js.png';
+import laravelLivewireLogo from '../assets/skills/laravel-livewire.png';
+import ngZorroLogo from '../assets/skills/ng-zorro.png';
+import phpLogo from '../assets/skills/php.png';
+import springBootLogo from '../assets/skills/spring-boot.png';
+import tailwindLogo from '../assets/skills/tailwind-css.png';
+import typescriptLogo from '../assets/skills/typescript.png';
+import figmaLogo from '../assets/tools/Figma-Icon.svg';
+import vscodeLogo from '../assets/tools/vscode.svg';
+import type { ImageMetadata } from 'astro';
+
+export type PortfolioImage = ImageMetadata | string;
+
 export interface Skill {
-  link: string;
+  link: PortfolioImage;
   name: string;
 }
 
@@ -26,34 +46,34 @@ export interface ExperienceContent {
 export interface Experience {
   title: string;
   company: string;
-  companyLogo: string;
+  companyLogo: ImageMetadata;
   color: string;
   duration: string;
   content: ExperienceContent[];
 }
 
 export const languages = {
-  typeScript: { link: '/assets/skills/typescript.png', name: 'TypeScript' },
-  javaScript: { link: '/assets/skills/js.png', name: 'JavaScript' },
-  java: { link: '/assets/skills/java.png', name: 'Java' },
-  php: { link: '/assets/skills/php.png', name: 'PHP' },
+  typeScript: { link: typescriptLogo, name: 'TypeScript' },
+  javaScript: { link: jsLogo, name: 'JavaScript' },
+  java: { link: javaLogo, name: 'Java' },
+  php: { link: phpLogo, name: 'PHP' },
 } satisfies Record<string, Skill>;
 
 export const techStacks = {
-  angular: { link: '/assets/frameworks/angular.svg', name: 'Angular' },
-  angularJs: { link: '/assets/skills/angularJS.png', name: 'AngularJS' },
-  springBoot: { link: '/assets/skills/spring-boot.png', name: 'Spring Boot' },
-  tailwind: { link: '/assets/skills/tailwind-css.png', name: 'Tailwind CSS' },
-  ngZorro: { link: '/assets/skills/ng-zorro.png', name: 'NG-ZORRO' },
+  angular: { link: angularLogo, name: 'Angular' },
+  angularJs: { link: angularJsLogo, name: 'AngularJS' },
+  springBoot: { link: springBootLogo, name: 'Spring Boot' },
+  tailwind: { link: tailwindLogo, name: 'Tailwind CSS' },
+  ngZorro: { link: ngZorroLogo, name: 'NG-ZORRO' },
   laravel: { link: 'https://laravel.com/img/logomark.min.svg', name: 'Laravel' },
   bootstrap5: { link: 'https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg', name: 'Bootstrap 5' },
-  bootstrap3: { link: '/assets/skills/bootstrap-3.png', name: 'Bootstrap 3' },
-  laravelLivewire: { link: '/assets/skills/laravel-livewire.png', name: 'Laravel Livewire' },
+  bootstrap3: { link: bootstrap3Logo, name: 'Bootstrap 3' },
+  laravelLivewire: { link: laravelLivewireLogo, name: 'Laravel Livewire' },
 } satisfies Record<string, Skill>;
 
 export const tools = {
-  vscode: { link: '/assets/tools/vscode.svg', name: 'VS Code' },
-  figma: { link: '/assets/tools/Figma-Icon.svg', name: 'Figma' },
+  vscode: { link: vscodeLogo, name: 'VS Code' },
+  figma: { link: figmaLogo, name: 'Figma' },
   idea: { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg', name: 'IntelliJ IDEA' },
   phpStorm: { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg', name: 'PhpStorm' },
 } satisfies Record<string, Skill>;
@@ -62,7 +82,7 @@ export const experiences: Experience[] = [
   {
     title: 'Software Engineer',
     company: 'Bukku',
-    companyLogo: '/assets/company_logo/Bukku.png',
+    companyLogo: bukkuLogo,
     color: '#57b3c3',
     duration: 'Since Apr 2023',
     content: [
@@ -122,7 +142,7 @@ export const experiences: Experience[] = [
   {
     title: 'Software Engineer, IT Specialist',
     company: 'iFAST',
-    companyLogo: '/assets/company_logo/iFAST.jpeg',
+    companyLogo: ifastLogo,
     color: '#014656',
     duration: 'Sep 2022 - Feb 2023',
     content: [
@@ -142,7 +162,7 @@ export const experiences: Experience[] = [
   {
     title: 'Intern, IT Partnership',
     company: 'iFAST',
-    companyLogo: '/assets/company_logo/iFAST.jpeg',
+    companyLogo: ifastLogo,
     color: '#014656',
     duration: 'May 2022 - Aug 2022',
     content: [
@@ -159,7 +179,7 @@ export const experiences: Experience[] = [
   {
     title: 'IT Security Trainee',
     company: 'Condition Zebra',
-    companyLogo: '/assets/company_logo/ConditionZebra.png',
+    companyLogo: conditionZebraLogo,
     color: '#b02024',
     duration: 'Jan 2020 - Mar 2020',
     content: [

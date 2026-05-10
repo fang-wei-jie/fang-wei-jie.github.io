@@ -1,22 +1,29 @@
 ---
+import { Image } from 'astro:assets';
 import type { Experience } from '../data/portfolio';
 
 interface Props {
   experience: Experience;
+  logoLoading?: 'eager' | 'lazy';
 }
 
-const { experience } = Astro.props;
+const { experience, logoLoading = 'lazy' } = Astro.props;
 ---
 
 <article class="flex justify-center">
   <div class="h-auto w-full rounded-xl transition-all duration-300 ease-in-out" style={`background-color: ${experience.color}1a;`}>
     <div class="relative z-10 grid gap-2 p-5">
-      <div class="flex flex-row justify-between gap-2 align-top">
-        <div>
+      <div class="flex flex-row justify-between gap-3 align-top">
+        <div class="min-w-0">
           <h3 class="text-xl font-semibold">{experience.title}</h3>
           <p class="text-md">{experience.duration}</p>
         </div>
-        <img class="h-10 object-contain" src={experience.companyLogo} alt={`${experience.company} logo`} />
+        <Image
+          class="h-10 w-28 shrink-0 object-contain object-right"
+          src={experience.companyLogo}
+          alt={`${experience.company} logo`}
+          loading={logoLoading}
+        />
       </div>
 
       {
