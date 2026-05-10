@@ -1,0 +1,50 @@
+---
+import type { Experience } from '../data/portfolio';
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+
+<article class="flex justify-center">
+  <div class="h-auto w-full rounded-xl transition-all duration-300 ease-in-out" style={`background-color: ${experience.color}1a;`}>
+    <div class="relative z-10 grid gap-2 p-5">
+      <div class="flex flex-row justify-between gap-2 align-top">
+        <div>
+          <h3 class="text-xl font-semibold">{experience.title}</h3>
+          <p class="text-md">{experience.duration}</p>
+        </div>
+        <img class="h-10 object-contain" src={experience.companyLogo} alt={`${experience.company} logo`} />
+      </div>
+
+      {
+        experience.content.map((content) => (
+          <div>
+            {content.type && <h4 class="font-semibold">{content.type}</h4>}
+
+            {content.description && (
+              <ul class:list={['list-disc px-5', content.type ? 'text-sm' : '']}>
+                {content.description.map((paragraph) => <li>{paragraph}</li>)}
+              </ul>
+            )}
+
+            {content.projects?.map((project) => (
+              <div class="py-1 pl-2">
+                <p>{project.name}</p>
+                <p class="text-sm text-gray-600">{project.description}</p>
+
+                {project.info && (
+                  <ul class="list-disc px-5 pt-1 text-sm text-gray-600">
+                    {project.info.map((info) => <li>{info}</li>)}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</article>

@@ -1,0 +1,12 @@
+---
+import { experiences } from '../data/portfolio';
+import ExperienceCard from './ExperienceCard.astro';
+---
+
+<section class="px-6 py-5 transition-all duration-300 ease-in-out md:px-14 xl:px-60">
+  <h2 class="text-3xl font-bold">Experiences</h2>
+
+  <div class="grid gap-5 py-10">
+    {experiences.map((experience) => <ExperienceCard experience={experience} />)}
+  </div>
+</section>
