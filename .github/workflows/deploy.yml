@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: 22
           package-manager: npm
+          out-dir: docs
 
   deploy:
     needs: build
