@@ -1,6 +1,5 @@
 import angularLogo from '../assets/frameworks/angular.svg';
 import bukkuLogo from '../assets/company_logo/Bukku.png';
-import conditionZebraLogo from '../assets/company_logo/ConditionZebra.png';
 import ifastLogo from '../assets/company_logo/iFAST.jpeg';
 import angularJsLogo from '../assets/skills/angularJS.png';
 import bootstrap3Logo from '../assets/skills/bootstrap-3.png';
@@ -12,7 +11,6 @@ import phpLogo from '../assets/skills/php.png';
 import springBootLogo from '../assets/skills/spring-boot.png';
 import tailwindLogo from '../assets/skills/tailwind-css.png';
 import typescriptLogo from '../assets/skills/typescript.png';
-import figmaLogo from '../assets/tools/Figma-Icon.svg';
 import vscodeLogo from '../assets/tools/vscode.svg';
 import type { ImageMetadata } from 'astro';
 
@@ -21,14 +19,6 @@ export type PortfolioImage = ImageMetadata | string;
 export interface Skill {
   link: PortfolioImage;
   name: string;
-}
-
-export interface Project {
-  name: string;
-  description: string;
-  techStacks: Skill[];
-  link?: string;
-  linkName?: string;
 }
 
 export interface ExperienceProject {
@@ -73,7 +63,6 @@ export const techStacks = {
 
 export const tools = {
   vscode: { link: vscodeLogo, name: 'VS Code' },
-  figma: { link: figmaLogo, name: 'Figma' },
   idea: { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg', name: 'IntelliJ IDEA' },
   phpStorm: { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg', name: 'PhpStorm' },
 } satisfies Record<string, Skill>;
@@ -175,46 +164,6 @@ export const experiences: Experience[] = [
         projects: null,
       },
     ],
-  },
-  {
-    title: 'IT Security Trainee',
-    company: 'Condition Zebra',
-    companyLogo: conditionZebraLogo,
-    color: '#b02024',
-    duration: 'Jan 2020 - Mar 2020',
-    content: [
-      {
-        type: null,
-        description: [
-          'Assisted in organizing reports, verifying vulnerability assessment results.',
-          'Participated in social engineering with seniors and other interns.',
-          'Carried out a network security automated assessment and reporting with other interns.',
-        ],
-        projects: null,
-      },
-    ],
-  },
-];
-
-export const projects: Project[] = [
-  {
-    name: 'Sport Center Booking Managing System',
-    description: 'Booking Management System',
-    techStacks: [techStacks.laravel, techStacks.laravelLivewire, techStacks.bootstrap5],
-    link: 'https://neweracollege365-my.sharepoint.com/:v:/g/personal/fangweijie1327_e_newera_edu_my/EYiHka8btGpPupwtSNqwHfMBcrc0sMl30CHDKVEHqpnjnQ?e=1mfXAo',
-    linkName: 'Demo Video',
-  },
-  {
-    name: 'LivesUnderTheSea Promotional Website',
-    description: 'Website Prototype',
-    techStacks: [tools.figma],
-    link: 'https://www.figma.com/proto/22hkRIM7Fq6vq4PFxTgRjU/HCI-Website-Project?page-id=0%3A1&node-id=75%3A2&viewport=241%2C48%2C0.08&scaling=min-zoom&starting-point-node-id=75%3A2',
-  },
-  {
-    name: 'Pre- and Post-Pregnancy Tracking and Advisory App',
-    description: 'App Flow and UI Mockup',
-    techStacks: [tools.figma],
-    link: 'https://www.figma.com/file/7mNJfNS7oh4OydTaEfll3e/Pre--and-Post-Pregnancy-Tracking-and-Advisory-App?node-id=76%3A12930',
   },
 ];
 
