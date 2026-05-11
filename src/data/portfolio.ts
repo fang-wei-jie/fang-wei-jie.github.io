@@ -2,16 +2,15 @@ import angularLogo from '../assets/frameworks/angular.svg';
 import bukkuLogo from '../assets/company_logo/Bukku.png';
 import ifastLogo from '../assets/company_logo/iFAST.jpeg';
 import angularJsLogo from '../assets/skills/angularJS.png';
-import bootstrap3Logo from '../assets/skills/bootstrap-3.png';
+import bootstrap5Logo from '../assets/skills/bootstrap-5.png';
+import ideaLogo from '../assets/skills/IDEA.png';
 import javaLogo from '../assets/skills/java.png';
 import jsLogo from '../assets/skills/js.png';
-import laravelLivewireLogo from '../assets/skills/laravel-livewire.png';
 import ngZorroLogo from '../assets/skills/ng-zorro.png';
 import phpLogo from '../assets/skills/php.png';
 import springBootLogo from '../assets/skills/spring-boot.png';
 import tailwindLogo from '../assets/skills/tailwind-css.png';
 import typescriptLogo from '../assets/skills/typescript.png';
-import vscodeLogo from '../assets/tools/vscode.svg';
 import type { ImageMetadata } from 'astro';
 
 export type PortfolioImage = ImageMetadata | string;
@@ -39,33 +38,56 @@ export interface Experience {
   companyLogo: ImageMetadata;
   color: string;
   duration: string;
+  skills: ExperienceSkillGroup[];
   content: ExperienceContent[];
 }
 
-export const languages = {
-  typeScript: { link: typescriptLogo, name: 'TypeScript' },
-  javaScript: { link: jsLogo, name: 'JavaScript' },
-  java: { link: javaLogo, name: 'Java' },
-  php: { link: phpLogo, name: 'PHP' },
-} satisfies Record<string, Skill>;
+export interface ExperienceSkillGroup {
+  title: string;
+  skills: Skill[];
+}
 
-export const techStacks = {
-  angular: { link: angularLogo, name: 'Angular' },
-  angularJs: { link: angularJsLogo, name: 'AngularJS' },
-  springBoot: { link: springBootLogo, name: 'Spring Boot' },
-  tailwind: { link: tailwindLogo, name: 'Tailwind CSS' },
-  ngZorro: { link: ngZorroLogo, name: 'NG-ZORRO' },
-  laravel: { link: 'https://laravel.com/img/logomark.min.svg', name: 'Laravel' },
-  bootstrap5: { link: 'https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg', name: 'Bootstrap 5' },
-  bootstrap3: { link: bootstrap3Logo, name: 'Bootstrap 3' },
-  laravelLivewire: { link: laravelLivewireLogo, name: 'Laravel Livewire' },
-} satisfies Record<string, Skill>;
+const bukkuSkills: ExperienceSkillGroup[] = [
+  {
+    title: 'Language',
+    skills: [
+      { link: phpLogo, name: 'PHP' },
+      { link: typescriptLogo, name: 'TypeScript' },
+    ],
+  },
+  {
+    title: 'Frameworks',
+    skills: [
+      { link: 'https://laravel.com/img/logomark.min.svg', name: 'Laravel' },
+      { link: 'https://cdn.simpleicons.org/nextdotjs/000000', name: 'NextJS' },
+      { link: 'https://cdn.simpleicons.org/antdesign/0170FE', name: 'Ant Design' },
+    ],
+  },
+  { title: 'Tools', skills: [{ link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg', name: 'PhpStorm' }] },
+];
 
-export const tools = {
-  vscode: { link: vscodeLogo, name: 'VS Code' },
-  idea: { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg', name: 'IntelliJ IDEA' },
-  phpStorm: { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg', name: 'PhpStorm' },
-} satisfies Record<string, Skill>;
+const ifastSkills: ExperienceSkillGroup[] = [
+  {
+    title: 'Language',
+    skills: [
+      { link: javaLogo, name: 'Java' },
+      { link: typescriptLogo, name: 'TypeScript' },
+      { link: jsLogo, name: 'JavaScript' },
+    ]
+  },
+  {
+    title: 'Frameworks',
+    skills: [
+      { link: springBootLogo, name: 'Spring Boot' },
+      { link: angularLogo, name: 'Angular' },
+      { link: angularJsLogo, name: 'AngularJS' },
+      { link: tailwindLogo, name: 'Tailwind CSS' },
+      { link: ngZorroLogo, name: 'NG-ZORRO' },
+      { link: bootstrap5Logo, name: 'Bootstrap 5' },
+    ],
+  },
+  { title: 'Tools', skills: [{ link: ideaLogo, name: 'IntelliJ IDEA' }] },
+];
 
 export const experiences: Experience[] = [
   {
@@ -74,6 +96,7 @@ export const experiences: Experience[] = [
     companyLogo: bukkuLogo,
     color: '#57b3c3',
     duration: 'Since Apr 2023',
+    skills: bukkuSkills,
     content: [
       {
         type: 'Current and Upcoming Projects',
@@ -134,6 +157,7 @@ export const experiences: Experience[] = [
     companyLogo: ifastLogo,
     color: '#014656',
     duration: 'Sep 2022 - Feb 2023',
+    skills: ifastSkills,
     content: [
       {
         type: null,
@@ -154,6 +178,7 @@ export const experiences: Experience[] = [
     companyLogo: ifastLogo,
     color: '#014656',
     duration: 'May 2022 - Aug 2022',
+    skills: ifastSkills,
     content: [
       {
         type: null,
@@ -164,29 +189,5 @@ export const experiences: Experience[] = [
         projects: null,
       },
     ],
-  },
-];
-
-export const skillGroups = [
-  {
-    title: 'Languages',
-    skills: [languages.php, languages.typeScript, languages.javaScript, languages.java],
-  },
-  {
-    title: 'Frameworks',
-    skills: [
-      techStacks.laravel,
-      techStacks.angular,
-      techStacks.angularJs,
-      techStacks.springBoot,
-      techStacks.tailwind,
-      techStacks.ngZorro,
-      techStacks.bootstrap5,
-      techStacks.laravelLivewire,
-    ],
-  },
-  {
-    title: 'Tools',
-    skills: [tools.phpStorm, tools.idea, tools.vscode],
   },
 ];
