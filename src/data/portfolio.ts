@@ -103,8 +103,13 @@ export const experiences: Experience[] = [
         description: null,
         projects: [
           {
-            name: 'MyInvois Integration',
-            description: "integrating Malaysia's e-invoicing platform with accounting software",
+            name: 'Cooking something Next-level',
+            description: 'a major frontend architectural revamp is underway.\nhint: A popular framework that is the natural next step for React developers.',
+            info: null,
+          },
+          {
+            name: 'Payable Payment',
+            description: 'streamlining the payment of purchase bills to suppliers for a seamless experience',
             info: null,
           },
         ],
@@ -132,6 +137,11 @@ export const experiences: Experience[] = [
         type: 'Participated Projects',
         description: null,
         projects: [
+          {
+            name: 'MyInvois Integration',
+            description: "integrating Malaysia's e-invoicing platform with accounting software",
+            info: null,
+          },
           {
             name: 'Financing Portal',
             description: 'with Funding Societies, applying for financing directly from Bukku',

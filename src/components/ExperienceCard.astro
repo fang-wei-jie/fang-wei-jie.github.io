@@ -40,7 +40,11 @@ const { experience, logoLoading = 'lazy' } = Astro.props;
             {content.projects?.map((project) => (
               <div class="py-1 pl-2">
                 <p>{project.name}</p>
-                <p class="text-sm text-gray-600">{project.description}</p>
+                <p class="text-sm text-gray-600">
+                  {project.description.split('\n').map((line, index) => (
+                    index > 0 ? <><br />{line}</> : line
+                  ))}
+                </p>
 
                 {project.info && (
                   <ul class="list-disc px-5 pt-1 text-sm text-gray-600">
