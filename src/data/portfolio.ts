@@ -63,7 +63,13 @@ const bukkuSkills: ExperienceSkillGroup[] = [
       { link: 'https://cdn.simpleicons.org/antdesign/0170FE', name: 'Ant Design' },
     ],
   },
-  { title: 'Tools', skills: [{ link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg', name: 'PhpStorm' }] },
+  {
+    title: 'Tools',
+    skills: [
+      { link: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg', name: 'PhpStorm' },
+      { link: 'https://cdn.simpleicons.org/claude', name: 'Claude' },
+    ],
+  },
 ];
 
 const ifastSkills: ExperienceSkillGroup[] = [
@@ -134,6 +140,11 @@ export const experiences: Experience[] = [
         type: 'Collaborative Team Projects',
         description: null,
         projects: [
+          {
+            name: 'AI Tooling & Workflow Task Force',
+            description: 'part of a 3-person task force evaluating LLMs (Claude vs. ChatGPT), establishing developer workflows, and helping with dev team AI adoption',
+            info: null,
+          },
           {
             name: 'React to Next.js Migration',
             description: 'migrating the application frontend from client-side React to Next.js for improved performance, SEO, and modern developer ergonomics',
