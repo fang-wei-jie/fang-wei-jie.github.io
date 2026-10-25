@@ -99,14 +99,9 @@ export const experiences: Experience[] = [
     skills: bukkuSkills,
     content: [
       {
-        type: 'Current and Upcoming Projects',
+        type: 'Current Projects',
         description: null,
         projects: [
-          {
-            name: 'Cooking something Next-level',
-            description: 'a major frontend architectural revamp is underway.\nhint: A popular framework that is the natural next step for React developers.',
-            info: null,
-          },
           {
             name: 'Payable Payment',
             description: 'streamlining the payment of purchase bills to suppliers for a seamless experience',
@@ -115,31 +110,12 @@ export const experiences: Experience[] = [
         ],
       },
       {
-        type: 'Significant Projects',
+        type: 'Key Projects',
         description: null,
         projects: [
           {
             name: 'Bank Feed',
-            description: 'with Smart Reconciliation, a seamless bank reconciliation experience',
-            info: ['Maybank integration, for both Sole Prop and non Sole Prop users'],
-          },
-          {
-            name: 'Aging Report',
-            description: 'financial document that lists unpaid customer invoices and their due dates to identify overdue payments',
-            info: [
-              'added ability to generate report by the month(s), in addition to day(s)',
-              'fully reworked internals, to be more efficient and maintainable',
-            ],
-          },
-        ],
-      },
-      {
-        type: 'Participated Projects',
-        description: null,
-        projects: [
-          {
-            name: 'MyInvois Integration',
-            description: "integrating Malaysia's e-invoicing platform with accounting software",
+            description: 'with Smart Reconciliation, for a seamless bank reconciliation experience for Maybank M2U Biz users',
             info: null,
           },
           {
@@ -148,13 +124,34 @@ export const experiences: Experience[] = [
             info: null,
           },
           {
+            name: 'Aging Report revamp',
+            description: 'reworked internals to be more efficient and maintainable, with expanded range scoping capability',
+            info: null,
+          },
+        ],
+      },
+      {
+        type: 'Collaborative Team Projects',
+        description: null,
+        projects: [
+          {
+            name: 'React to Next.js Migration',
+            description: 'migrating the application frontend from client-side React to Next.js for improved performance, SEO, and modern developer ergonomics',
+            info: null,
+          },
+          {
+            name: 'MyInvois Integration',
+            description: "integrating Malaysia's e-invoicing platform with accounting software",
+            info: null,
+          },
+          {
             name: 'Flow',
             description: 'flowing "Sales" from POS and e-Commerce Platform into Bukku auto-magically',
             info: null,
           },
           {
-            name: 'Feature & Quota Limit Revamp',
-            description: 'feature and quota limiting for different plans',
+            name: 'Feature & Quota Limit revamp',
+            description: 'restructuring of feature and quota limiting for different plans',
             info: null,
           },
         ],
