@@ -32,9 +32,9 @@ const { experience, logoLoading = 'lazy' } = Astro.props;
             {content.type && <h4 class="font-semibold">{content.type}</h4>}
 
             {content.description && (
-              <ul class:list={['list-disc px-5', content.type ? 'text-sm' : '']}>
-                {content.description.map((paragraph) => <li>{paragraph}</li>)}
-              </ul>
+              <div class:list={['list-disc pl-2', content.type ? 'text-sm text-gray-600' : '']}>
+                {content.description.map((paragraph) => <p class="py-1 text-sm text-gray-600">{paragraph}</p>)}
+              </div>
             )}
 
             {content.projects?.map((project) => (
