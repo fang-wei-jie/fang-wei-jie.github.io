@@ -162,6 +162,14 @@ export const experiences: Experience[] = [
           },
         ],
       },
+      {
+        type: 'API Documentation & Developer Support',
+        description: [
+          'Maintain Bukku’s public API documentation (OpenAPI specifications), updating the documented contract alongside API changes.',
+          'Work with external developers and integration partners to adapt the API to their business workflows and practices: answering technical questions, recommending how to structure integrations, and troubleshooting issues by verifying behaviour against the API source.',
+        ],
+        projects: [],
+      },
     ],
   },
   {
