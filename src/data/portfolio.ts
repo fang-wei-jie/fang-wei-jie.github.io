@@ -105,64 +105,59 @@ export const experiences: Experience[] = [
     skills: bukkuSkills,
     content: [
       {
-        type: 'Current Projects',
+        type: 'Core Platform & Feature Engineering',
         description: null,
         projects: [
           {
-            name: 'Payable Payment',
-            description: 'streamlining the payment of purchase bills to suppliers for a seamless experience',
+            name: 'Payable Payment & Flow',
+            description: 'Developed automated purchase bill payment functionality and multi-channel sales synchronisation across POS and e-commerce channels, helping reduce manual data entry in accounting workflows.',
+            info: null,
+          },
+          {
+            name: 'Feature & Quota System Revamp',
+            description: 'Contributed to revamping plan-based feature controls and usage limits to support subscription tiering and upselling capabilities.',
+            info: null,
+          },
+          {
+            name: 'Aging Report Engine Overhaul',
+            description: 'Contributed to refactoring the aging report architecture to expand range-scoping capabilities while improving computational performance and maintainability.',
             info: null,
           },
         ],
       },
       {
-        type: 'Key Projects',
+        type: 'Fintech & Regulatory Integrations',
         description: null,
         projects: [
           {
-            name: 'Bank Feed',
-            description: 'with Smart Reconciliation, for a seamless bank reconciliation experience for Maybank M2U Biz users',
+            name: 'MyInvois Integration',
+            description: "Developed integration with Malaysia's LHDN e-invoicing platform to support regulatory compliance for accounting users.",
+            info: null,
+          },
+          {
+            name: 'Maybank M2U Biz Bank Feed',
+            description: 'Developed automated bank feed functionality alongside Smart Reconciliation to streamline bank transaction matching.',
             info: null,
           },
           {
             name: 'Financing Portal',
-            description: 'with Funding Societies, applying for financing directly from Bukku',
-            info: null,
-          },
-          {
-            name: 'Aging Report revamp',
-            description: 'reworked internals to be more efficient and maintainable, with expanded range scoping capability',
+            description: 'Contributed to the development of an embedded SME financing application portal in partnership with Funding Societies.',
             info: null,
           },
         ],
       },
       {
-        type: 'Collaborative Team Projects',
+        type: 'Architecture, Migration & AI Adoption',
         description: null,
         projects: [
           {
-            name: 'AI Tooling & Workflow Task Force',
-            description: 'part of a 3-person task force evaluating LLMs (Claude vs. ChatGPT), establishing developer workflows, and helping with dev team AI adoption',
-            info: null,
-          },
-          {
             name: 'React to Next.js Migration',
-            description: 'migrating the application frontend from client-side React to Next.js for improved performance, SEO, and modern developer ergonomics',
+            description: 'Contributed to migrating the frontend application from client-rendered React to Next.js, while continuing to develop new features and enhancements across the application.',
             info: null,
           },
           {
-            name: 'MyInvois Integration',
-            description: "integrating Malaysia's e-invoicing platform with accounting software",
-            info: null,
-          },
-          {
-            name: 'Flow',
-            description: 'flowing "Sales" from POS and e-Commerce Platform into Bukku auto-magically',
-            info: null,
-          },
-          {
-            name: 'Feature & Quota Limit revamp',
-            description: 'restructuring of feature and quota limiting for different plans',
+            name: 'AI Tooling Task Force',
+            description: 'Participated as one of three core engineers evaluating LLM capabilities, including Claude and ChatGPT, and contributing to the evaluation and establishment of AI-assisted development workflows within the engineering organisation.',
             info: null,
           },
         ],
